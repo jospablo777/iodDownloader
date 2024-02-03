@@ -3,7 +3,7 @@
 
 #' Read the data pulled from Iowa Open Data portal (https://data.iowa.gov/).
 #'
-#' @description  `read_iowa_data` reads the data pulled from the Iowa Open Data portal API with the function `download_iowa_data`
+#' @description `read_iowa_data` reads the data pulled from the Iowa Open Data portal API with the function `download_iowa_data`
 #'
 #' @param folder_path A string. The path to the folder you saved your data.
 #' @param data_name A string. How your data set common files are called in your file system.
@@ -12,8 +12,8 @@
 #' @export
 #'
 #' @examples
-#' Read the fire_department_census data you downloaded with the download_iowa_data() function.
-#' The folder 'data' with the data is located in your R project working directory.
+#' # Read the fire_department_census data you downloaded with the download_iowa_data() function.
+#' # The folder 'data' with the data is located in your R project working directory.
 #' read_iowa_data(folder_path = 'data',
 #'                data_name   = 'fire_department_census')
 read_iowa_data <- function(folder_path='data', data_name) {
