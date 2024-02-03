@@ -30,6 +30,15 @@ Nothing. The function save the batches in .csv files in the folder you've chosen
 \code{download_iowa_data()} downloads specified data from the Iowa Open Data portal (https://data.iowa.gov/).
 }
 \examples{
-# Here we download the Iowa Fire Department Census data set. If you go to the dataset web page (https://data.iowa.gov/Emergency-Management/Iowa-Fire-Department-Census/hv43-6ksq/about_data), you will find that the total number of rows of this data set (to the date, 26-Jan-2024) is 738, so if we want the whole data set it is okay if we set total_of_rows=1000, and batch_size=1000.
-download_iowa_data(data_id='hv43-6ksq', folder='data', data_name='fire_department_census', total_of_rows=1000, batch_size=1000)
+# Here we download the Iowa Fire Department Census data set.
+# If you go to the dataset web page
+# (https://data.iowa.gov/Emergency-Management/Iowa-Fire-Department-Census/hv43-6ksq/about_data),
+# you will find that the total number of rows of this data set
+# (to the date, 26-Jan-2024) is 738, so if we want the whole data
+# set it is okay if we set `total_of_rows = 1000`, and `batch_size = 1000`.
+download_iowa_data(data_id   = 'hv43-6ksq',
+                   folder    = 'data',
+                   data_name = 'fire_department_census',
+                   total_of_rows = 1000,
+                   batch_size    = 1000)
 }
