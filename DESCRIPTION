@@ -2,8 +2,7 @@ Package: iodDownloader
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("Jose P.", "Barrantes", , "jospablo777@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Jose P.", "Barrantes", , "jospablo777@gmail.com", role = c("aut", "cre"))
 Description: The package helps with the download and load of Iowa Open Data Sets.
 License: MIT + file LICENSE
 Encoding: UTF-8
