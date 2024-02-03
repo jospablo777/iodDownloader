@@ -1,0 +1,51 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# iodDownloader <a><img src="man/figures/logo.png" align="right" height="138" /></a>
+
+## Overview
+
+To facilitate access to the Iowa Open Data portal, iodDownloader
+provides utilities for downloading data in batches. This can be helpful
+for the most extensive data sets that cannot be downloaded at once.
+
+## Installation
+
+You can also embed plots, for example:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("jospablo777/iodDownloader")
+```
+
+## Usage
+
+The package comprises two functions, `download_iowa_data` and
+`read_iowa_data`. First, pick the data set you want to download; let’s
+say we want to download the Iowa Fire Department Census data set:
+<https://data.iowa.gov/Emergency-Management/Iowa-Fire-Department-Census/hv43-6ksq/about_data>
+
+From the URL of your data set, you must pick its ID; in this case, it is
+`hv43-6ksq`. Then, you indicate where you want to store the data, the
+number of rows you want, and the size of the batches.
+
+``` r
+library(iodDownloader)
+
+download_iowa_data(data_id   = 'hv43-6ksq',
+                   folder    = 'data',  # Folder in which we want to store the data. In this case we have chosen a folder called 'data/'
+                   data_name = 'fire_department_census', # Name we want for the local copy of the data set
+                   total_of_rows = 2000, # In this example we will pull only the first 2k rows of the data set
+                   batch_size    = 500)  # We chose the size of the batches we want to pull
+                     
+```
+
+After we download our data set, we can load it into memory with
+`read_iowa_data.`
+
+``` r
+# Please use the same foder and data names you used in your download
+read_iowa_data(folder_path = 'data',
+               data_name   = 'fire_department_census')
+                     
+```
