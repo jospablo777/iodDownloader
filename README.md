@@ -45,7 +45,6 @@ After we download our data set, we can load it into memory with
 
 ``` r
 # Please use the same foder and data names you used in your download
-read_iowa_data(folder_path = 'data',
-               data_name   = 'fire_department_census')
-                     
+fire_department_census_data <- read_iowa_data(folder_path = 'data',
+                                              data_name   = 'fire_department_census')
 ```
