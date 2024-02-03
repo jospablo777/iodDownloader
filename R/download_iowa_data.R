@@ -15,11 +15,12 @@
 #' @export
 #'
 #' @examples
-#' Here we download the Iowa Fire Department Census data set.
-#' If you go to the dataset web page
-#' (https://data.iowa.gov/Emergency-Management/Iowa-Fire-Department-Census/hv43-6ksq/about_data),
-#' you will find that the total number of rows of this data set (to the date, 26-Jan-2024) is 738, so if we want the whole data
-#' set it is okay if we set `total_of_rows = 1000`, and `batch_size = 1000`.
+#' # Here we download the Iowa Fire Department Census data set.
+#' # If you go to the dataset web page
+#' # (https://data.iowa.gov/Emergency-Management/Iowa-Fire-Department-Census/hv43-6ksq/about_data),
+#' # you will find that the total number of rows of this data set
+#' # (to the date, 26-Jan-2024) is 738, so if we want the whole data
+#' # set it is okay if we set `total_of_rows = 1000`, and `batch_size = 1000`.
 #' download_iowa_data(data_id   = 'hv43-6ksq',
 #'                    folder    = 'data',
 #'                    data_name = 'fire_department_census',
@@ -64,6 +65,12 @@ download_iowa_data <- function(data_id, folder, data_name, total_of_rows=10000, 
 
     file_final_folder <- paste0(folder, '/', data_name, '/')
     file_name <- paste0(file_final_folder, data_name, '_', i, '.csv')
+
+    # If data folder doesn't exist, create it
+    if (!file.exists(folder)){
+      # Creates the directory
+      dir.create(file.path(folder))
+    }
 
     # We will save our data locally to save time when re-reading the data.
     # But first we must check if the directory for our data exist
