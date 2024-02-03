@@ -18,6 +18,8 @@ A data frame. It reads into the memory the chunks of your data set downloaded in
 \code{read_iowa_data} reads the data pulled from the Iowa Open Data portal API with the function \code{download_iowa_data}
 }
 \examples{
-# Read the fire_department_census data you downloaded with th download_iowa_data() function. The folder 'data' with the data is located in your R project working directory.
-read_iowa_data(folder_path='data', data_name='fire_department_census')
+# Read the fire_department_census data you downloaded with the download_iowa_data() function.
+# The folder 'data' with the data is located in your R project working directory.
+read_iowa_data(folder_path = 'data',
+               data_name   = 'fire_department_census')
 }
