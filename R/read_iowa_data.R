@@ -36,10 +36,10 @@ read_iowa_data <- function(folder_path='data', data_name) {
 
     # First read file is used to instantiate the main df
     if (i == 1) {
-      df <- readr::read_csv(filenames[i])
+      df <- readr::read_csv(filenames[i], num_threads = 1)
       col_specs <- readr::spec(df)
     } else {
-      df_ <- readr::read_csv(filenames[i], col_types=col_specs)
+      df_ <- readr::read_csv(filenames[i], col_types=col_specs, num_threads = 1)
       df <- dplyr::bind_rows(df, df_)
     }
 

@@ -76,13 +76,13 @@ download_iowa_data <- function(data_id, folder, data_name, total_of_rows=10000, 
     # But first we must check if the directory for our data exist
     if (file.exists(file_final_folder)){
 
-      readr::write_csv(df, file_name) # just saves the file if directory exists
+      readr::write_csv(df, file_name, num_threads = 1) # just saves the file if directory exists
     } else {
       # Creates the directory
       dir.create(file.path(file_final_folder))
 
       # Saves the file
-      readr::write_csv(df, file_name)
+      readr::write_csv(df, file_name, num_threads = 1)
     }
 
     # Update offset for next batch
