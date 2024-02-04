@@ -47,9 +47,6 @@ read_iowa_data <- function(folder_path='data', data_name) {
     utils::setTxtProgressBar(pb, i)
   }
 
-  # sort data by date
-  # df <- df %>% arrange(date)
-
   return(df)
 
 }
