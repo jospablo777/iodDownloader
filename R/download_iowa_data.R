@@ -60,8 +60,12 @@ download_iowa_data <- function(data_id, folder, data_name, total_of_rows=10000, 
     # Request to the API
     request <- httr::GET(url = url)
 
-    # Extract content
-    df <- httr::content(request)
+    # Next chunk suppresses warning since httr::content depends on readr, and it will
+    # produce a lot of noise during the iterativeexecution
+    suppressWarnings({
+      # Extract content
+      df <- httr::content(request)
+    })
 
     file_final_folder <- paste0(folder, '/', data_name, '/')
     file_name <- paste0(file_final_folder, data_name, '_', i, '.csv')
@@ -76,13 +80,20 @@ download_iowa_data <- function(data_id, folder, data_name, total_of_rows=10000, 
     # But first we must check if the directory for our data exist
     if (file.exists(file_final_folder)){
 
-      readr::write_csv(df, file_name, num_threads = 1) # just saves the file if directory exists
+      # readr warnings and messages are noisy in loops
+      suppressWarnings({
+        readr::write_csv(df, file_name, num_threads = 1) # just saves the file if directory exists
+      })
+
     } else {
       # Creates the directory
       dir.create(file.path(file_final_folder))
 
-      # Saves the file
-      readr::write_csv(df, file_name, num_threads = 1)
+      # readr warnings and messages are noisy in loops
+      suppressWarnings({
+        # Saves the file
+        readr::write_csv(df, file_name, num_threads = 1)
+      })
     }
 
     # Update offset for next batch
