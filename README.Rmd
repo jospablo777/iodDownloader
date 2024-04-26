@@ -22,7 +22,6 @@ To facilitate access to the Iowa Open Data portal, iodDownloader provides utilit
 
 ## Installation
 
-You can also embed plots, for example:
 
 ```{r, eval = FALSE}
 # install.packages("devtools")

@@ -11,8 +11,6 @@ for the most extensive data sets that cannot be downloaded at once.
 
 ## Installation
 
-You can also embed plots, for example:
-
 ``` r
 # install.packages("devtools")
 devtools::install_github("jospablo777/iodDownloader")
